@@ -1,226 +1,480 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <title>TerraForce — Homepage</title>
+    <title>Préci-Tech Inc. — Excavation de Précision</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900|Oswald:400,500,600,700,800,900&amp;subset=latin">
-    <link rel="stylesheet" href="css/tailwind/tailwind.min.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="shuffle-for-tailwind.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: '#ca1919', /* Your requested color */
+                dark: '#0f0f11',
+                gray: '#f4f4f5',
+              }
+            },
+            fontFamily: {
+              heading: ['Montserrat', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+            },
+            boxShadow: {
+                'premium': '0 20px 40px -10px rgba(0, 0, 0, 0.1)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        /* Custom subtle animations */
+        .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hover-lift:hover { transform: translateY(-8px); }
+    </style>
 </head>
-<body class="antialiased bg-body text-body font-body">
-    <div class="">
-                
-      <nav class="bg-zinc-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="bg-amber-500 p-2 rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" viewbox="0 0 24 24" fill="currentColor">
-                <path d="M13.783 15.172l2.121-2.121 5.996 5.996-2.121 2.121-5.996-5.996zm-3.536 0l-5.996 5.996 2.121 2.121 5.996-5.996-2.121-2.121zm1.768-1.768L7.05 8.439l2.121-2.121 4.95 4.95-2.106 2.136zm3.535-3.535l2.121-2.121 2.121 2.121-2.121 2.121-2.121-2.121zM3 5h6v2H5v12h14v-4h2v6H3V5z"></path>
-              </svg>
+<body class="antialiased bg-white text-zinc-800 font-body selection:bg-brand-red selection:text-white">
+
+    <nav class="bg-white/95 backdrop-blur-md border-b border-zinc-100 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center group">
+                <img src="préci-tech-couleur-fond-blanc.png" alt="Logo Préci-Tech Inc." class="h-14 w-auto object-contain group-hover:opacity-90 transition-opacity">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10 font-heading text-xs font-bold uppercase tracking-[0.15em] text-zinc-500">
+                <a href="#services" class="hover:text-brand-red transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-brand-red transition-colors duration-300">L'Entreprise</a>
+                <a href="#contact" class="hover:text-brand-red transition-colors duration-300">Contact</a>
             </div>
-            <span class="text-2xl font-heading font-bold">TerraForce</span>
-          </div>
-          <div class="hidden md:flex items-center gap-8">
-            <a href="#services" class="hover:text-amber-500 transition-colors">Services</a>
-            <a href="#about" class="hover:text-amber-500 transition-colors">About</a>
-            <a href="#projects" class="hover:text-amber-500 transition-colors">Projects</a>
-            <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
-          </div>
-          <a href="#contact" class="bg-amber-500 text-zinc-900 px-6 py-2 font-semibold rounded hover:bg-amber-400 transition-colors">Get Quote</a>
+            
+            <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-zinc-900 text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red transition-colors duration-300 rounded-sm">
+                <span>Soumission</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
         </div>
-      </nav>
-                
-      <section class="relative bg-zinc-800 text-white">
-        <div class="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&amp;q=80" alt="Excavation site" class="w-full h-full object-cover opacity-40">
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 py-32">
-          <div class="max-w-3xl">
-            <span class="inline-block bg-amber-500 text-zinc-900 px-4 py-1 text-sm font-semibold rounded mb-6">Professional Excavation Services</span>
-            <h1 class="font-heading text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span>Moving Earth.</span>
-              <span class="text-amber-500">Building Futures.</span>
-            </h1>
-            <p class="text-xl text-zinc-300 mb-8">From residential foundations to large-scale commercial site preparation, TerraForce delivers precision excavation with state-of-the-art equipment and experienced operators.</p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" class="bg-amber-500 text-zinc-900 px-8 py-4 font-bold rounded text-center hover:bg-amber-400 transition-colors">Request Free Estimate</a>
-              <a href="#services" class="border-2 border-white px-8 py-4 font-bold rounded text-center hover:bg-white hover:text-zinc-900 transition-colors">Our Services</a>
-            </div>
-          </div>
-        </div>
-      </section>
-                
-      <section id="services" class="bg-zinc-100 py-20">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-16">
-            <span class="text-amber-600 font-semibold">What We Do</span>
-            <h2 class="font-heading text-4xl font-bold text-zinc-900 mt-2">Our Excavation Services</h2>
-          </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Site Preparation</h3>
-              <p class="text-zinc-600">Complete land clearing, grubbing, and site preparation for new construction projects of any scale.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Foundation Digging</h3>
-              <p class="text-zinc-600">Precise excavation for residential and commercial foundations with accurate depth and grade control.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Utility Trenching</h3>
-              <p class="text-zinc-600">Expert trenching for water, sewer, electrical, and communication line installations.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Land Grading</h3>
-              <p class="text-zinc-600">Professional grading and leveling services for proper drainage and construction-ready surfaces.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Demolition</h3>
-              <p class="text-zinc-600">Safe and efficient demolition of structures with debris removal and site cleanup services.</p>
-            </div>
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-              <div class="bg-amber-500 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-xl font-bold text-zinc-900 mb-3">Hauling Services</h3>
-              <p class="text-zinc-600">Material delivery and removal including topsoil, gravel, sand, and construction debris hauling.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-                
-      <section id="contact" class="bg-zinc-900 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="grid lg:grid-cols-2 gap-16">
-            <div>
-              <span class="text-amber-500 font-semibold">Get In Touch</span>
-              <h2 class="font-heading text-4xl font-bold mt-2 mb-6">Request a Free Quote</h2>
-              <p class="text-zinc-400 mb-8">Ready to start your project? Contact us today for a free, no-obligation estimate. Our team will assess your needs and provide a competitive quote.</p>
-              <div class="space-y-6">
-                <div class="flex items-center gap-4">
-                  <div class="bg-amber-500 p-3 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-zinc-400 text-sm">Call Us</p>
-                    <p class="font-semibold text-lg">(555) 123-4567</p>
-                  </div>
-                </div>
-                <div class="flex items-center gap-4">
-                  <div class="bg-amber-500 p-3 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-zinc-400 text-sm">Email Us</p>
-                    <p class="font-semibold text-lg">info@terraforce.com</p>
-                  </div>
-                </div>
-                <div class="flex items-center gap-4">
-                  <div class="bg-amber-500 p-3 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-900" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <p class="text-zinc-400 text-sm">Location</p>
-                    <p class="font-semibold text-lg">Serving the Greater Metro Area</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-zinc-800 p-8 rounded-lg">
-              <form class="space-y-6 contact-form">
-                <div class="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-sm font-medium mb-2">Full Name</label>
-                    <input type="text" class="w-full bg-zinc-700 border border-zinc-600 rounded px-4 py-3 focus:outline-none focus:border-amber-500" placeholder="John Doe">
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium mb-2">Phone Number</label>
-                    <input type="tel" class="w-full bg-zinc-700 border border-zinc-600 rounded px-4 py-3 focus:outline-none focus:border-amber-500" placeholder="(555) 000-0000">
-                  </div>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-2">Email Address</label>
-                  <input type="email" class="w-full bg-zinc-700 border border-zinc-600 rounded px-4 py-3 focus:outline-none focus:border-amber-500" placeholder="john@example.com">
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-2">Project Type</label>
-                  <select class="w-full bg-zinc-700 border border-zinc-600 rounded px-4 py-3 focus:outline-none focus:border-amber-500">
-                    <option>Site Preparation</option>
-                    <option>Foundation Digging</option>
-                    <option>Utility Trenching</option>
-                    <option>Land Grading</option>
-                    <option>Demolition</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-2">Project Details</label>
-                  <textarea rows="4" class="w-full bg-zinc-700 border border-zinc-600 rounded px-4 py-3 focus:outline-none focus:border-amber-500" placeholder="Tell us about your project..."></textarea>
-                </div>
-                <button type="submit" class="w-full bg-amber-500 text-zinc-900 py-4 font-bold rounded hover:bg-amber-400 transition-colors">Submit Request</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-                
-      <footer class="bg-zinc-950 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-              <div class="bg-amber-500 p-2 rounded">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-900" viewbox="0 0 24 24" fill="currentColor">
-                  <path d="M13.783 15.172l2.121-2.121 5.996 5.996-2.121 2.121-5.996-5.996zm-3.536 0l-5.996 5.996 2.121 2.121 5.996-5.996-2.121-2.121zm1.768-1.768L7.05 8.439l2.121-2.121 4.95 4.95-2.106 2.136zm3.535-3.535l2.121-2.121 2.121 2.121-2.121 2.121-2.121-2.121zM3 5h6v2H5v12h14v-4h2v6H3V5z"></path>
-                </svg>
-              </div>
-              <span class="text-xl font-heading font-bold">TerraForce</span>
-            </div>
-            <div class="flex gap-8 text-zinc-400">
-              <a href="#services" class="hover:text-amber-500 transition-colors">Services</a>
-              <a href="#about" class="hover:text-amber-500 transition-colors">About</a>
-              <a href="#contact" class="hover:text-amber-500 transition-colors">Contact</a>
-            </div>
-            <div class="text-zinc-500 text-sm">© 2026 TerraForce. All rights reserved.</div>
-          </div>
-        </div>
-      </footer>
+    </nav>
+
+<section class="relative min-h-screen flex flex-col bg-zinc-900 overflow-hidden">
+
+    <div class="absolute inset-0 z-0">
+        <img src="/src/assets/tracteur1.jpeg" 
+             alt="Excavation Sherbrooke" 
+             class="w-full h-full object-cover object-center transform scale-105 animate-pulse-slow">
     </div>
-    <script type="text/javascript" src="js/global-15922.js?v=1769444773"></script>
+
+    <div class="absolute inset-0 z-10 bg-gradient-to-t from-zinc-950 via-zinc-900/90 to-zinc-900/30 md:bg-gradient-to-r md:from-zinc-950 md:via-zinc-950/80 md:to-transparent"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-6 w-full flex-grow flex items-center py-20 md:py-0">
+        
+        <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-6 animate-fade-in-up">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+                </span>
+                <span class="text-brand-red font-heading font-bold tracking-[0.2em] text-xs uppercase">
+                    Sherbrooke • Estrie
+                </span>
+            </div>
+
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-lg">
+                TERRE.<br>
+                PIERRE.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">PRÉCISION.</span>
+            </h1>
+
+            <div class="border-l-4 border-brand-red pl-6 mb-10 backdrop-blur-sm">
+                <p class="text-zinc-200 text-lg md:text-xl font-light leading-relaxed max-w-lg">
+                    L'excavation résidentielle et agricole exécutée avec une rigueur militaire. Nous bâtissons les fondations solides de votre avenir.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-5">
+                <a href="#contact" class="px-8 py-4 bg-brand-red text-white font-heading font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-zinc-900 transition-all duration-300 shadow-lg shadow-red-900/20 text-center">
+                    Estimation Gratuite
+                </a>
+                <a href="#projects" class="px-8 py-4 border border-zinc-600 hover:border-white text-white font-heading font-bold text-sm uppercase tracking-widest transition-colors duration-300 backdrop-blur-md bg-white/5 text-center">
+                    Nos Réalisations
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="relative z-20 mt-auto w-full border-t border-white/10 bg-black/40 backdrop-blur-md hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center text-white/80">
+            
+            <div class="flex items-center gap-4">
+                <div class="bg-brand-red/20 p-2 rounded-full">
+                    <svg class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-zinc-400">Entreprise</p>
+                    <p class="font-heading font-bold text-white">100% Locale</p>
+                </div>
+            </div>
+
+            <div class="h-8 w-px bg-white/10"></div>
+
+            <div class="flex items-center gap-4">
+                <div class="bg-brand-red/20 p-2 rounded-full">
+                    <svg class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-zinc-400">Service</p>
+                    <p class="font-heading font-bold text-white">Clé en main</p>
+                </div>
+            </div>
+
+            <div class="h-8 w-px bg-white/10"></div>
+
+            <div class="flex items-center gap-4">
+                <div class="bg-brand-red/20 p-2 rounded-full">
+                        <svg class="w-5 h-5 text-brand-red" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-zinc-400">Réponse</p>
+                    <p class="font-heading font-bold text-white">Rapide 24/48h</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section id="about" class="py-20 md:py-32 bg-zinc-900 relative overflow-hidden">
+    
+    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    
+    <div class="absolute top-1/2 right-0 w-[300px] h-[300px] bg-brand-red/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+            
+            <div class="w-full lg:w-1/2 relative group">
+                <div class="absolute -inset-1 bg-gradient-to-tr from-brand-red to-transparent opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-700"></div>
+                
+                <div class="relative rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-800">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Machinerie Préci-Tech" 
+                         class="w-full h-64 md:h-auto object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out brightness-90 contrast-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
+                </div>
+                
+                <div class="absolute -bottom-6 right-4 md:-right-6 bg-zinc-900/90 backdrop-blur-md border-l-4 border-brand-red p-6 shadow-xl z-20 max-w-[220px] md:max-w-xs rounded-sm">
+                    <p class="font-heading text-3xl md:text-5xl font-bold text-white mb-1">100%</p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-widest text-brand-red font-bold">Engagement Qualité</p>
+                    <p class="text-sm text-zinc-400 mt-2 leading-relaxed font-light hidden md:block">
+                        Rigueur militaire et souci du détail inégalé.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="w-full lg:w-1/2 pt-6 lg:pt-0">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
+                    </span>
+                    <span class="text-brand-red font-bold uppercase tracking-[0.2em] text-xs">Notre ADN</span>
+                </div>
+                
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    La référence en excavation <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">à Sherbrooke.</span>
+                </h2>
+                
+                <p class="text-lg md:text-xl text-zinc-200 mb-6 font-light leading-relaxed border-l-2 border-brand-red pl-6">
+                    Chez <strong>Préci-Tech Inc.</strong>, nous ne faisons pas que déplacer de la terre. Nous façonnons votre environnement avec une précision technique.
+                </p>
+                
+                <p class="text-zinc-400 mb-8 leading-relaxed font-light text-sm md:text-base">
+                    Fondée avec l'objectif de rehausser les standards de l'industrie en Estrie, notre entreprise combine une machinerie de pointe à une expertise terrain éprouvée.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                    <div class="flex items-start gap-4 group">
+                        <div class="mt-1 min-w-[20px] text-brand-red group-hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wide">Expertise Agricole</h4>
+                            <p class="text-xs text-zinc-500 mt-1">Solutions de drainage avancées.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 group">
+                         <div class="mt-1 min-w-[20px] text-brand-red group-hover:text-white transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-white text-sm uppercase tracking-wide">Opérateurs Certifiés</h4>
+                            <p class="text-xs text-zinc-500 mt-1">Sécurité et précision garanties.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-white hover:text-brand-red transition-colors group">
+                    <span class="border-b-2 border-brand-red pb-1">Discuter avec notre équipe</span>
+                    <svg class="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-32 bg-zinc-50">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-zinc-200 pb-10">
+                <div>
+                    <span class="text-brand-red font-bold uppercase tracking-[0.2em] text-xs">Notre Expertise</span>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mt-4">Services Spécialisés</h2>
+                </div>
+                <p class="text-zinc-500 max-w-md mt-6 md:mt-0 text-right md:text-left text-lg font-light leading-relaxed">
+                    Une précision d'exécution inégalée pour vos projets résidentiels et agricoles.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop" alt="Drainage" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-brand-red text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Drainage Avancé</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Installation de drains français et agricoles. Nous assurons une gestion optimale des eaux souterraines pour protéger la structure de vos bâtiments.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop" alt="Paysagement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-red transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Paysagement</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Nivellement de terrain de haute précision. Création de pentes et contours esthétiques pour un aménagement durable et fonctionnel.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1590644365607-1c5a38fc6a44?q=80&w=2070&auto=format&fit=crop" alt="Stationnement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-red transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Stationnements</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Excavation d'entrées de cour, décaissement stratégique et préparation de fondation granulaire pour le pavage.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Fondations" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-red transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Fondations</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Préparation rigoureuse des sols. Excavation et compactage pour garages, agrandissements et bâtiments agricoles.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1533241249536-22442c5c93c1?q=80&w=2070&auto=format&fit=crop" alt="Déboisement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-red transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Déboisement</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Nettoyage de terrains, dessouchage et retrait de végétation pour maximiser votre espace cultivable ou bâtissable.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                    <div class="relative h-72 overflow-hidden">
+                        <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1503708928676-1ec7974e7af3?q=80&w=2070&auto=format&fit=crop" alt="Démolition" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="relative px-8 pb-10 pt-12 flex-grow bg-white border-b-4 border-transparent group-hover:border-brand-red transition-colors duration-300">
+                        <div class="absolute -top-8 left-8 w-16 h-16 bg-zinc-900 text-white flex items-center justify-center shadow-lg group-hover:bg-brand-red transition-colors duration-300">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-red transition-colors">Démolition</h3>
+                        <p class="text-zinc-500 leading-relaxed mb-6">Démolition sécuritaire de bâtiments accessoires. Nous nous chargeons de la disposition écologique des matériaux.</p>
+                        <span class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-zinc-900 group-hover:text-brand-red group-hover:translate-x-2 transition-transform duration-300">
+                            En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 md:order-1">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-zinc-100 rounded-full z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1590240974639-65b75017c527?q=80&w=2070&auto=format&fit=crop" class="relative z-10 w-full rounded-sm shadow-2xl" alt="Machinerie Préci-Tech">
+                    <div class="absolute -bottom-10 -right-10 w-full h-full border-[20px] border-brand-gray -z-10 rounded-sm"></div>
+                </div>
+                
+                <div class="order-1 md:order-2">
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mb-8 leading-tight">
+                        Expertise Locale.<br>
+                        <span class="text-brand-red">Standards Élevés.</span>
+                    </h2>
+                    <p class="text-zinc-600 text-lg mb-8 font-light">
+                        Basés à Sherbrooke, nous intervenons avec une rigueur militaire sur les projets résidentiels et agricoles. Chez Préci-Tech, il n'y a pas de petits projets, seulement des exécutions précises.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 group">
+                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors">01</span>
+                            <span class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm">Secteur Résidentiel</span>
+                        </div>
+                        <div class="w-full h-px bg-zinc-100"></div>
+                        <div class="flex items-center gap-4 group">
+                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors">02</span>
+                            <span class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm">Milieu Agricole</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-brand-dark text-white py-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-zinc-900 skew-x-12 transform translate-x-20"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-16">
+                
+                <div class="lg:col-span-2 space-y-12">
+                    <div>
+                        <span class="text-brand-red font-bold uppercase tracking-widest text-xs">Contact</span>
+                        <h2 class="font-heading text-5xl font-bold mt-4 mb-6">Parlons de <br>votre projet.</h2>
+                        <p class="text-zinc-400 font-light leading-relaxed">
+                            Chaque grand projet commence par une conversation. Obtenez votre estimation détaillée gratuitement.
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 text-brand-red">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Téléphone</p>
+                                <p class="text-xl font-heading font-medium text-white">(819) 555-0000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 text-brand-red">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Courriel</p>
+                                <p class="text-xl font-heading font-medium text-white">info@preci-tech.ca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <form class="bg-zinc-900/50 backdrop-blur-sm p-10 border border-zinc-800 rounded-sm">
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="group">
+                                <label class="block text-xs font-bold uppercase text-zinc-500 mb-2 group-focus-within:text-brand-red transition-colors">Nom Complet</label>
+                                <input type="text" class="w-full bg-zinc-950 border-b-2 border-zinc-800 text-white px-0 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-zinc-700" placeholder="Jean Tremblay">
+                            </div>
+                            <div class="group">
+                                <label class="block text-xs font-bold uppercase text-zinc-500 mb-2 group-focus-within:text-brand-red transition-colors">Téléphone</label>
+                                <input type="tel" class="w-full bg-zinc-950 border-b-2 border-zinc-800 text-white px-0 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-zinc-700" placeholder="(819) ...">
+                            </div>
+                        </div>
+                        
+                        <div class="group mb-8">
+                            <label class="block text-xs font-bold uppercase text-zinc-500 mb-2 group-focus-within:text-brand-red transition-colors">Service Requis</label>
+                            <select class="w-full bg-zinc-950 border-b-2 border-zinc-800 text-white px-0 py-3 focus:outline-none focus:border-brand-red transition-all cursor-pointer">
+                                <option>Drainage</option>
+                                <option>Paysagement</option>
+                                <option>Excavation de cour</option>
+                                <option>Fondation</option>
+                                <option>Déboisement</option>
+                                <option>Démolition</option>
+                            </select>
+                        </div>
+
+                        <div class="group mb-10">
+                            <label class="block text-xs font-bold uppercase text-zinc-500 mb-2 group-focus-within:text-brand-red transition-colors">Message</label>
+                            <textarea rows="3" class="w-full bg-zinc-950 border-b-2 border-zinc-800 text-white px-0 py-3 focus:outline-none focus:border-brand-red transition-all placeholder-zinc-700" placeholder="Brève description de vos besoins..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-red text-white py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-brand-dark transition-all duration-300">
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-zinc-950 text-zinc-400 py-16 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4 opacity-50 hover:opacity-100 transition-opacity">
+                 <img src="préci-tech-couleur-fond-blanc.png" alt="Logo" class="h-10 w-auto brightness-200 grayscale"> 
+            </div>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#about" class="hover:text-white transition-colors">À Propos</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <div class="text-xs text-zinc-600">
+                © 2026 Préci-Tech Inc. Sherbrooke.
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
-
