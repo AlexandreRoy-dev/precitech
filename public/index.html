@@ -35,26 +35,165 @@
         /* Custom subtle animations */
         .hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .hover-lift:hover { transform: translateY(-8px); }
+        
+        /* Scroll animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Navbar scroll effect */
+        nav.scrolled {
+            background: rgba(15, 15, 17, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Counter animation */
+        .counter {
+            transition: all 0.3s ease;
+        }
+        
+        /* Parallax effect */
+        .parallax {
+            transition: transform 0.3s ease-out;
+        }
+        
+        /* Loading animation */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #ca1919;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        #back-to-top.visible {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #back-to-top:hover {
+            background: #a01414;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body class="antialiased bg-white text-zinc-800 font-body selection:bg-brand-red selection:text-white">
 
-<nav class="absolute top-0 w-full z-50 bg-transparent">
-    <div class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
-        <a href="#" class="flex items-center group">
-            <img src="/src/assets/préci-tech-couleur-fondnoir-horizontal.png" alt="Logo Préci-Tech Inc." class="h-[100px] w-auto object-contain group-hover:opacity-90 transition-opacity">
-        </a>
-        
-        <div class="hidden md:flex items-center gap-10 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white">
-            <a href="#services" class="hover:text-brand-red transition-colors duration-300">Services</a>
-            <a href="#about" class="hover:text-brand-red transition-colors duration-300">L'Entreprise</a>
-            <a href="#contact" class="hover:text-brand-red transition-colors duration-300">Contact</a>
+<nav id="navbar" class="absolute top-0 w-full z-50 bg-transparent transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="flex items-center justify-between">
+            <a href="#" class="flex items-center group">
+                <img src="/src/assets/préci-tech-couleur-fondnoir-horizontal.png" alt="Logo Préci-Tech Inc." class="h-[200px] w-auto object-contain group-hover:opacity-90 transition-opacity">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white">
+                <a href="#services" class="nav-link hover:text-brand-red transition-colors duration-300">Services</a>
+                <a href="#about" class="nav-link hover:text-brand-red transition-colors duration-300">L'Entreprise</a>
+                <a href="#contact" class="nav-link hover:text-brand-red transition-colors duration-300">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-white text-zinc-900 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors duration-300 rounded-sm">
+                    <span>Soumission</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-brand-red transition-colors">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
         
-        <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-white text-zinc-900 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors duration-300 rounded-sm">
-            <span>Soumission</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="pt-6 pb-4 flex flex-col gap-4 font-heading text-sm font-bold uppercase tracking-widest text-white">
+                <a href="#services" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">Services</a>
+                <a href="#about" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">L'Entreprise</a>
+                <a href="#contact" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">Contact</a>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white text-zinc-900 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors duration-300 rounded-sm mt-2">
+                    <span>Soumission</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -71,7 +210,7 @@
     <div class="relative z-20 max-w-7xl mx-auto px-6 w-full flex-grow flex items-center py-20 md:py-0 md:pt-32">
         
         <div class="max-w-2xl">
-            <div class="flex items-center gap-3 mb-6 animate-fade-in-up">
+            <div class="flex items-center gap-3 mb-6 fade-in-up mt-12 md:mt-0">
                 <span class="flex h-2 w-2 relative">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>
@@ -81,20 +220,20 @@
                 </span>
             </div>
 
-            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-lg">
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1] mb-8 drop-shadow-lg fade-in-up">
                 TERRE.<br>
                 PIERRE.<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-red-600">PRÉCISION.</span>
             </h1>
 
-         <div class="border-l-4 border-brand-red pl-6 mb-10 backdrop-blur-sm">
+         <div class="border-l-4 border-brand-red pl-6 mb-10 backdrop-blur-sm fade-in-up">
     <p class="text-zinc-200 text-lg md:text-xl font-light leading-relaxed max-w-lg">
         L'excavation résidentielle et agricole exécutée avec une précision absolue. 
       Nous préparons le terrain pour garantir la stabilité durable de vos projets.
     </p>
 </div>
 
-            <div class="flex flex-col sm:flex-row gap-5">
+            <div class="flex flex-col sm:flex-row gap-5 fade-in-up">
                 <a href="#contact" class="px-8 py-4 bg-brand-red text-white font-heading font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-zinc-900 transition-all duration-300 shadow-lg shadow-red-900/20 text-center">
                     Estimation Gratuite
                 </a>
@@ -157,7 +296,7 @@
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             
-            <div class="w-full lg:w-1/2 relative group">
+            <div class="w-full lg:w-1/2 relative group fade-in-left">
                 <div class="absolute -inset-1 bg-gradient-to-tr from-brand-red to-transparent opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-700"></div>
                 
                 <div class="relative rounded-sm overflow-hidden border border-white/10 shadow-2xl bg-zinc-800">
@@ -168,8 +307,8 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent"></div>
                 </div>
                 
-                <div class="absolute -bottom-6 right-4 md:-right-6 bg-zinc-900/90 backdrop-blur-md border-l-4 border-brand-red p-6 shadow-xl z-20 max-w-[220px] md:max-w-xs rounded-sm">
-                    <p class="font-heading text-3xl md:text-5xl font-bold text-white mb-1">100%</p>
+                <div class="absolute -bottom-6 right-4 md:-right-6 bg-zinc-900/90 backdrop-blur-md border-l-4 border-brand-red p-6 shadow-xl z-20 max-w-[220px] md:max-w-xs rounded-sm scale-in">
+                    <p class="font-heading text-3xl md:text-5xl font-bold text-white mb-1 counter" data-target="100">0</p>
                     <p class="text-[10px] md:text-xs uppercase tracking-widest text-brand-red font-bold">Engagement Qualité</p>
                     <p class="text-sm text-zinc-400 mt-2 leading-relaxed font-light hidden md:block">
                         Rigueur militaire et souci du détail inégalé.
@@ -177,7 +316,7 @@
                 </div>
             </div>
             
-            <div class="w-full lg:w-1/2 pt-6 lg:pt-0">
+            <div class="w-full lg:w-1/2 pt-6 lg:pt-0 fade-in-right">
                 <div class="flex items-center gap-3 mb-6">
                     <span class="flex h-2 w-2 relative">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
@@ -245,7 +384,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="drainage-avance.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop" alt="Drainage" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -260,9 +399,9 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="paysagement.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop" alt="Paysagement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -277,9 +416,9 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="stationnements.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1590644365607-1c5a38fc6a44?q=80&w=2070&auto=format&fit=crop" alt="Stationnement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -294,9 +433,9 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="fondations.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Fondations" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -311,9 +450,9 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="deboisement.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1533241249536-22442c5c93c1?q=80&w=2070&auto=format&fit=crop" alt="Déboisement" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -328,9 +467,9 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
-                <div class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
+                <a href="demolition.html" class="group bg-white rounded-sm shadow-premium overflow-hidden hover:-translate-y-2 transition-all duration-500 h-full flex flex-col fade-in-up">
                     <div class="relative h-72 overflow-hidden">
                         <div class="absolute inset-0 bg-zinc-900/10 group-hover:bg-zinc-900/0 transition-colors z-10"></div>
                         <img src="https://images.unsplash.com/photo-1503708928676-1ec7974e7af3?q=80&w=2070&auto=format&fit=crop" alt="Démolition" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
@@ -345,7 +484,7 @@
                             En savoir plus <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </span>
                     </div>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -476,6 +615,329 @@
             </div>
         </div>
     </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Trigger counter animation if element has counter class
+                    if (entry.target.querySelector('.counter')) {
+                        animateCounter(entry.target.querySelector('.counter'));
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + '%';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + '%';
+                }
+            };
+
+            // Only animate if not already animated
+            if (!element.classList.contains('animated')) {
+                element.classList.add('animated');
+                updateCounter();
+            }
+        }
+
+        // Parallax effect for hero image
+        const heroImage = document.querySelector('section:first-of-type img');
+        if (heroImage) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.5;
+                heroImage.style.transform = `translate3d(0, ${rate}px, 0) scale(1.05)`;
+            });
+        }
+
+        // Form validation and interaction
+        const form = document.querySelector('form');
+        if (form) {
+            const inputs = form.querySelectorAll('input, textarea, select');
+            
+            inputs.forEach(input => {
+                // Add focus/blur effects
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.parentElement.classList.remove('focused');
+                    // Basic validation
+                    if (this.value.trim() === '' && this.hasAttribute('required')) {
+                        this.style.borderColor = '#ef4444';
+                    } else {
+                        this.style.borderColor = '';
+                    }
+                });
+
+                // Real-time validation for email
+                if (input.type === 'email') {
+                    input.addEventListener('input', function() {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (this.value && !emailRegex.test(this.value)) {
+                            this.style.borderColor = '#ef4444';
+                        } else {
+                            this.style.borderColor = '';
+                        }
+                    });
+                }
+
+                // Real-time validation for phone
+                if (input.type === 'tel') {
+                    input.addEventListener('input', function() {
+                        const phoneRegex = /^[\d\s\(\)\-]+$/;
+                        if (this.value && !phoneRegex.test(this.value)) {
+                            this.style.borderColor = '#ef4444';
+                        } else {
+                            this.style.borderColor = '';
+                        }
+                    });
+                }
+            });
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                // Show success message (you can replace this with actual form submission)
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Envoi en cours...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitBtn.textContent = '✓ Message envoyé!';
+                    submitBtn.style.backgroundColor = '#10b981';
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 1500);
+            });
+        }
+
+        // Active nav link highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function highlightNavLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-brand-red');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-brand-red');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavLink);
+        highlightNavLink(); // Initial call
+
+        // Add stagger delay to service cards
+        document.querySelectorAll('#services .fade-in-up').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Lazy load images with fade-in effect
+        const images = document.querySelectorAll('img');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease-in';
+                    
+                    if (img.complete) {
+                        img.style.opacity = '1';
+                    } else {
+                        img.addEventListener('load', () => {
+                            img.style.opacity = '1';
+                        });
+                    }
+                    
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => {
+            imageObserver.observe(img);
+        });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add hover effect to service cards with tilt
+        document.querySelectorAll('#services .group').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Add typing effect to hero title (optional enhancement)
+        const heroTitle = document.querySelector('h1');
+        if (heroTitle && window.innerWidth > 768) {
+            const words = ['TERRE.', 'PIERRE.', 'PRÉCISION.'];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            
+            function typeEffect() {
+                const currentWord = words[wordIndex];
+                const span = heroTitle.querySelector('span');
+                
+                if (!isDeleting && charIndex < currentWord.length) {
+                    span.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeEffect, 100);
+                } else if (isDeleting && charIndex > 0) {
+                    span.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(typeEffect, 50);
+                } else if (!isDeleting && charIndex === currentWord.length) {
+                    setTimeout(() => {
+                        isDeleting = true;
+                        typeEffect();
+                    }, 2000);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeEffect, 500);
+                }
+            }
+            
+            // Uncomment to enable typing effect
+            // setTimeout(typeEffect, 1000);
+        }
+    </script>
 
 </body>
 </html>
