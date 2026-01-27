@@ -89,9 +89,14 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
+            background: transparent;
         }
         .mobile-menu.open {
             max-height: 500px;
+            background: white;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         
         /* Counter animation */
@@ -184,11 +189,11 @@
         </div>
         
         <div id="mobile-menu" class="mobile-menu md:hidden">
-            <div class="pt-6 pb-4 flex flex-col gap-4 font-heading text-sm font-bold uppercase tracking-widest text-white">
-                <a href="#services" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">Services</a>
-                <a href="#about" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">L'Entreprise</a>
-                <a href="#contact" class="nav-link hover:text-brand-red transition-colors duration-300 py-2">Contact</a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white text-zinc-900 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-red hover:text-white transition-colors duration-300 rounded-sm mt-2">
+            <div class="pt-6 pb-4 px-4 flex flex-col gap-4 font-heading text-sm font-bold uppercase tracking-widest">
+                <a href="#services" class="nav-link text-zinc-900 hover:text-brand-red transition-colors duration-300 py-2">Services</a>
+                <a href="#about" class="nav-link text-zinc-900 hover:text-brand-red transition-colors duration-300 py-2">L'Entreprise</a>
+                <a href="#contact" class="nav-link text-zinc-900 hover:text-brand-red transition-colors duration-300 py-2">Contact</a>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-zinc-900 hover:text-white transition-colors duration-300 rounded-sm mt-2">
                     <span>Soumission</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
@@ -601,17 +606,24 @@
     </section>
 
     <footer class="bg-zinc-950 text-zinc-400 py-16 border-t border-zinc-900">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-4 opacity-50 hover:opacity-100 transition-opacity">
-                 <img src="préci-tech-couleur-fond-blanc.png" alt="Logo" class="h-10 w-auto brightness-200 grayscale"> 
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+                <div class="flex items-center gap-4 opacity-70 hover:opacity-100 transition-opacity">
+                     <img src="/src/assets/préci-tech-couleur-fondnoir-horizontal.png" alt="Logo Préci-Tech Inc." class="h-10 w-auto"> 
+                </div>
+                <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#about" class="hover:text-white transition-colors">À Propos</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="text-xs text-zinc-600">
+                    © 2026 Préci-Tech Inc. Sherbrooke.
+                </div>
             </div>
-            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest">
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
-                <a href="#about" class="hover:text-white transition-colors">À Propos</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-            </div>
-            <div class="text-xs text-zinc-600">
-                © 2026 Préci-Tech Inc. Sherbrooke.
+            <div class="border-t border-zinc-800 pt-6 text-center">
+                <p class="text-xs text-zinc-600">
+                    Création web par <a href="https://roymarketing.ca" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">Roy Marketing</a>
+                </p>
             </div>
         </div>
     </footer>
