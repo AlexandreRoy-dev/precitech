@@ -164,7 +164,7 @@
     <div class="max-w-7xl mx-auto px-6 py-8">
         <div class="flex items-center justify-between">
             <a href="#" class="flex items-center group">
-                <img src="public/src/assets/préci-tech-couleur-fondnoir-horizontal.png" alt="Logo Préci-Tech Inc." class="h-[200px] w-auto object-contain group-hover:opacity-90 transition-opacity">
+                <img src="/src/assets/préci-tech-couleur-fondnoir-horizontal.png" alt="Logo Préci-Tech Inc." class="h-[200px] w-auto object-contain group-hover:opacity-90 transition-opacity">
             </a>
             
             <div class="hidden md:flex items-center gap-10 font-heading text-xs font-bold uppercase tracking-[0.15em] text-white">
@@ -205,7 +205,7 @@
 <section class="relative min-h-screen flex flex-col bg-zinc-900 overflow-hidden">
 
     <div class="absolute inset-0 z-0">
-        <img src="public/src/assets/tracteur1.jpeg" 
+        <img src="/src/assets/tracteur1.jpeg" 
              alt="Excavation Sherbrooke" 
              class="w-full h-full object-cover object-center transform scale-105 animate-pulse-slow">
     </div>
@@ -671,7 +671,7 @@
 
     <section id="about" class="py-32 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-20">
                 <div class="relative order-2 md:order-1">
                     <div class="absolute -top-10 -left-10 w-40 h-40 bg-zinc-100 rounded-full z-0"></div>
                     <img src="https://images.unsplash.com/photo-1590240974639-65b75017c527?q=80&w=2070&auto=format&fit=crop" class="relative z-10 w-full rounded-sm shadow-2xl" alt="Machinerie Préci-Tech">
@@ -679,25 +679,175 @@
                 </div>
                 
                 <div class="order-1 md:order-2">
-                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mb-8 leading-tight">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-1 h-12 bg-brand-red"></span>
+                        <span class="text-brand-red font-bold uppercase tracking-[0.2em] text-xs">Depuis 2015</span>
+                    </div>
+                    
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-zinc-900 mb-6 leading-tight">
                         Expertise Locale.<br>
                         <span class="text-brand-red">Standards Élevés.</span>
                     </h2>
-                    <p class="text-zinc-600 text-lg mb-8 font-light">
+                    
+                    <p class="text-zinc-600 text-lg mb-6 font-light leading-relaxed">
                         Basés à Sherbrooke, nous intervenons avec une rigueur militaire sur les projets résidentiels et agricoles. Chez Préci-Tech, il n'y a pas de petits projets, seulement des exécutions précises.
                     </p>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 group">
-                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors">01</span>
-                            <span class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm">Secteur Résidentiel</span>
+                    <p class="text-zinc-600 mb-8 font-light leading-relaxed">
+                        Notre équipe d'opérateurs certifiés combine années d'expérience et formation continue pour garantir un travail impeccable. Équipés de machinerie moderne et performante, nous respectons les délais tout en maintenant les plus hauts standards de qualité et de sécurité sur chaque chantier.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-zinc-50 p-6 rounded-lg border border-zinc-100">
+                            <p class="font-heading text-4xl font-bold text-brand-red mb-2">500+</p>
+                            <p class="text-sm text-zinc-600 font-medium">Projets Complétés</p>
                         </div>
-                        <div class="w-full h-px bg-zinc-100"></div>
-                        <div class="flex items-center gap-4 group">
-                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors">02</span>
-                            <span class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm">Milieu Agricole</span>
+                        <div class="bg-zinc-50 p-6 rounded-lg border border-zinc-100">
+                            <p class="font-heading text-4xl font-bold text-brand-red mb-2">98%</p>
+                            <p class="text-sm text-zinc-600 font-medium">Clients Satisfaits</p>
                         </div>
                     </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 group">
+                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors flex-shrink-0 mt-1">01</span>
+                            <div>
+                                <h4 class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm mb-2">Secteur Résidentiel</h4>
+                                <p class="text-zinc-600 text-sm leading-relaxed">
+                                    Excavation de fondations, aménagement paysager, drainage résidentiel et préparation de terrain pour construction neuve.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-zinc-100"></div>
+                        <div class="flex items-start gap-4 group">
+                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors flex-shrink-0 mt-1">02</span>
+                            <div>
+                                <h4 class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm mb-2">Milieu Agricole</h4>
+                                <p class="text-zinc-600 text-sm leading-relaxed">
+                                    Systèmes de drainage agricole, nivellement de champs, construction de chemins de ferme et excavation pour bâtiments agricoles.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-zinc-100"></div>
+                        <div class="flex items-start gap-4 group">
+                            <span class="w-10 h-10 bg-zinc-900 text-white flex items-center justify-center rounded-full text-xs font-bold group-hover:bg-brand-red transition-colors flex-shrink-0 mt-1">03</span>
+                            <div>
+                                <h4 class="font-heading font-bold text-zinc-800 uppercase tracking-wider text-sm mb-2">Commercial & Industriel</h4>
+                                <p class="text-zinc-600 text-sm leading-relaxed">
+                                    Préparation de terrains commerciaux, excavation de stationnements et infrastructures pour projets de développement.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Features Section -->
+            <div class="pt-16 border-t border-zinc-200">
+                <div class="text-center mb-16">
+                    <span class="text-brand-red font-bold uppercase tracking-[0.2em] text-xs">Nos Atouts</span>
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-zinc-900 mt-4">Pourquoi Choisir Préci-Tech?</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Assurances Complètes</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Protection CNESST et assurance responsabilité civile pour votre tranquillité d'esprit sur tous nos chantiers.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Respect des Délais</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Planification rigoureuse et gestion efficace pour livrer vos projets dans les temps convenus, sans compromis.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Équipement Moderne</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Parc de machinerie récent et bien entretenu pour une performance optimale et un travail de qualité supérieure.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Équipe Expérimentée</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Opérateurs certifiés avec plus de 10 ans d'expérience moyenne dans l'industrie de l'excavation.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Service Personnalisé</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Approche sur mesure adaptée à vos besoins spécifiques et suivi personnalisé de votre projet du début à la fin.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-brand-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                            <svg class="w-8 h-8 text-brand-red group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="font-heading font-bold text-zinc-900 text-lg mb-3">Garantie de Qualité</h4>
+                        <p class="text-zinc-600 text-sm leading-relaxed">
+                            Engagement ferme envers l'excellence avec garantie sur nos travaux et satisfaction client à 100%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Area -->
+            <div class="mt-20 bg-zinc-900 rounded-lg p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+                
+                <div class="relative z-10 text-center">
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Zone de Service</h3>
+                    <p class="text-zinc-300 text-lg mb-8 max-w-3xl mx-auto">
+                        Nous desservons fièrement Sherbrooke et toute la région de l'Estrie, incluant les MRC avoisinantes.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Sherbrooke</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Magog</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Coaticook</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Asbestos</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Lennoxville</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Windsor</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Bromont</span>
+                        <span class="px-4 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20">Valcourt</span>
+                    </div>
+                    
+                    <p class="text-zinc-400 text-sm mt-6">
+                        Pour un projet à l'extérieur de ces zones, <a href="#contact" class="text-brand-red hover:text-white transition-colors underline">contactez-nous</a> pour discuter de vos besoins.
+                    </p>
                 </div>
             </div>
         </div>
